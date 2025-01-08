@@ -1,0 +1,103 @@
+.thumbnails-container {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+.thumbnail {
+  transition: transform .15s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.01);
+}
+
+
+/* -- Thumbnail Image --  */
+
+.thumbnail-image-container {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.thumbnail-image {
+ width: 100%;
+}
+
+.thumbnail-image-container div {
+  background-color: black;
+  color: white;
+
+  font-size: 13px;
+  padding: 3px 4px;
+
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+}
+
+/* -- Thumbnail Information -- */
+.thumbnail-information-container {
+  display: flex;
+}
+
+.author-image-container {
+  width: 50px;
+}
+
+.author-image {
+  width: 36px;
+  border-radius: 50px;
+}
+
+.thumbnail-description-container {
+  flex: 1;
+}
+
+.thumbnail-description {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 12px;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.author,
+.views {
+  color: gray;
+  font-size: 12px;
+}
+
+.thumbnail-description-container a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Media Queries */
+@media (max-width: 639px) {
+  .thumbnails-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 640px) {
+  .thumbnails-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .thumbnails-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .thumbnails-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

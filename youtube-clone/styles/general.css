@@ -1,0 +1,13 @@
+* {
+  /* Reset default margin and padding */
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+  font-family: Roboto, Arial;
+  padding: 80px 25px 25px 95px;
+}
