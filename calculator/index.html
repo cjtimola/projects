@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="Christian Julius T. Timola">
+    <meta name="description" content="JS DOM practice">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simple Calculator</title>
+
+    <link rel="stylesheet" href="styles/calculator.css">
+  </head>
+  <body>
+    <main>
+      <div class="calculator">
+        <p class="js-calculation calculation"></p>
+        <div class="calculator-buttons-container">
+          <div class="calculator-button-group">
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('1');
+            ">1</button>
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('2');
+            ">2</button>
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('3');
+            ">3</button>
+            <button class="calculator-button orange-button" onclick="
+              updateCalculation(' + ');
+            ">+</button>
+          </div>
+          <div class="calculator-button-group">
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('4');
+            ">4</button>
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('5');
+            ">5</button>
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('6');
+            ">6</button>
+            <button class="calculator-button orange-button" onclick="
+              updateCalculation(' - ');
+            ">-</button>
+          </div>
+          <div class="calculator-button-group">
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('7');
+            ">7</button>
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('8');
+            ">8</button>
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('9');
+            ">9</button>
+            <button class="calculator-button orange-button" onclick="
+              updateCalculation(' * ');
+            ">*</button>
+          </div>
+          <div class="calculator-button-group">
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('0');
+            ">0</button>
+            <button class="calculator-button gray-button" onclick="
+              updateCalculation('.');
+            ">.</button>
+            <button class="calculator-button gray-button" onclick="
+              calculate();
+            ">=</button>
+            <button class="calculator-button orange-button" onclick="
+              updateCalculation(' / ');
+            ">/</button>
+          </div>
+          <div class="calculator-button-group">
+            <button class="calculator-button gray-button clear-button" onclick="
+              clearCalculation();
+            ">Clear</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="scripts/calculator.js"></script>
+  </body>
+</html>
