@@ -4,6 +4,45 @@ const score = JSON.parse(localStorage.getItem('score')) || {
   ties: 0
 };
 
+// Reset Score
+document.querySelector('.js-reset-score-button')
+  .addEventListener('click', () => {
+    localStorage.removeItem('score');
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    displayScore();
+  });
+
+// Player moves
+document.querySelector('.js-rock-move-button')
+  .addEventListener('click', () => {
+    playGame('rock');
+  });
+
+document.querySelector('.js-paper-move-button')
+  .addEventListener('click', () => {
+    playGame('paper');
+  });
+
+document.querySelector('.js-scissors-move-button')
+  .addEventListener('click', () => {
+    playGame('scissors');
+  });
+
+// KeyDown player moves
+document.body.addEventListener('keydown', event => {
+  const key = event.key;
+
+  if (key === 'r') {
+    playGame('rock');
+  } else if (key === 'p') {
+    playGame('paper');
+  } else if (key === 's') {
+    playGame('scissors');
+  }
+});
+
 function displayScore () {
   document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 }
@@ -31,28 +70,31 @@ function pickComputerMove () {
 let isAutoPlaying = false;
 let intervalId;
 
-function autoPlay () {
-  let autoPlayButtonElement = document.querySelector('.js-auto-play-button');
+// Auto Play
+document.querySelector('.js-auto-play-button')
+  .addEventListener('click', () => {
+    let autoPlayButtonElement = document.querySelector('.js-auto-play-button');
 
-  if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
-      const playerMove = pickComputerMove();
-  
-      playGame(playerMove);
-    }, 1000);
+    if (!isAutoPlaying) {
+      intervalId = setInterval(() => {
+        const playerMove = pickComputerMove();
     
-    isAutoPlaying = true;
+        playGame(playerMove);
+      }, 1000);
+      
+      isAutoPlaying = true;
 
-    autoPlayButtonElement.innerHTML = 'Stop';
-    autoPlayButtonElement.classList.add('stop-button');
-  } else {
-    clearInterval(intervalId);
-    isAutoPlaying = false;
-    autoPlayButtonElement.innerHTML = 'Auto Play';
-    autoPlayButtonElement.classList.remove('stop-button');
+      autoPlayButtonElement.innerHTML = 'Stop';
+      autoPlayButtonElement.classList.add('stop-button');
+    } else {
+      clearInterval(intervalId);
+      isAutoPlaying = false;
+      autoPlayButtonElement.innerHTML = 'Auto Play';
+      autoPlayButtonElement.classList.remove('stop-button');
 
-  }
-}
+    }
+  });
+
 
 function playGame (playerMove) {
   const computerMove = pickComputerMove();
