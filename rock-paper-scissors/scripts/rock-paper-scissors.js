@@ -28,6 +28,32 @@ function pickComputerMove () {
   }
 }
 
+let isAutoPlaying = false;
+let intervalId;
+
+function autoPlay () {
+  let autoPlayButtonElement = document.querySelector('.js-auto-play-button');
+
+  if (!isAutoPlaying) {
+    intervalId = setInterval(function () {
+      const playerMove = pickComputerMove();
+  
+      playGame(playerMove);
+    }, 1000);
+    
+    isAutoPlaying = true;
+
+    autoPlayButtonElement.innerHTML = 'Stop';
+    autoPlayButtonElement.classList.add('stop-button');
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+    autoPlayButtonElement.innerHTML = 'Auto Play';
+    autoPlayButtonElement.classList.remove('stop-button');
+
+  }
+}
+
 function playGame (playerMove) {
   const computerMove = pickComputerMove();
 
