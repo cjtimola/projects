@@ -32,6 +32,24 @@
   align-items: start;
 }
 
+.quantity-input {
+  width: 50px;
+  font-size: 16px;
+
+  display: none;
+}
+
+.save-quantity-link,
+.update-quantity-link-invisible,
+.quantity-label-invisible {
+  display: none;
+}
+
+.quantity-input-visible,
+.save-quantity-link-visible {
+  display: inline-block;
+}
+
 @media (max-width: 1000px) {
   .main {
     max-width: 500px;
