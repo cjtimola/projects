@@ -72,6 +72,8 @@ function updateCartQuantity () {
     .innerHTML = cartQuantity;
 }
 
+updateCartQuantity();
+
 const addedMessageTimeouts = {};
 
 function addMessage (addedMessageTimeouts, productId) {
