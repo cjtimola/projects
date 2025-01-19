@@ -1,9 +1,10 @@
-import {cart, removeFromCart, updateCartQuantity, saveToStorage, updateDeliveryOption} from '../../data/cart.js';
+import {cart, removeFromCart, saveToStorage, updateDeliveryOption} from '../../data/cart.js';
 import {products, getProduct} from '../../data/products.js';
 import formatCurrency from '../utils/money.js';
 import daysjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js';
 import {renderPaymentSummary} from './paymentSummary.js';
+import renderCheckoutHeader from './checkoutHeader.js';
 
 export function renderOrderSummary () {
   let cartSummaryHTML = '';
@@ -119,8 +120,6 @@ export function renderOrderSummary () {
   document.querySelector('.js-order-summary')
     .innerHTML = cartSummaryHTML;
 
-  updateCartQuantity();
-
   document.querySelectorAll('.js-delete-link')
     .forEach((link) => {
       link.addEventListener('click', () => {
@@ -132,7 +131,7 @@ export function renderOrderSummary () {
         );
         container.remove();
 
-
+        renderCheckoutHeader();
         renderOrderSummary();
         renderPaymentSummary();
       })
@@ -178,6 +177,7 @@ export function renderOrderSummary () {
         quantityLabel.innerHTML = quantityInput.value;
         saveToStorage();
 
+        renderCheckoutHeader();
         renderOrderSummary();
         renderPaymentSummary();
 
