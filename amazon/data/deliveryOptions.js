@@ -2,10 +2,28 @@ import daysjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 export function calculateDeliveryDate (deliveryOption) {
   const today = daysjs();
-  const deliveryDate = today.add(
-    deliveryOption.deliveryDays,
-    'days'
-  );
+  
+  let deliveryDate = today;
+
+  let deliveryDays = deliveryOption.deliveryDays;
+
+  while (deliveryDays) {
+    deliveryDate = deliveryDate.add(
+      1,
+      'days'
+    );
+
+    const dayOfWeek = deliveryDate.format(
+      'dddd'
+    );
+
+    if (dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday') {
+      continue;
+    }
+
+    deliveryDays --;
+  }
+
   const dateString = deliveryDate.format(
     'dddd, MMMM D'
   );
