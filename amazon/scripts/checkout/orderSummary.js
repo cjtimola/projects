@@ -132,7 +132,8 @@ export function renderOrderSummary () {
         );
         container.remove();
 
-        updateCartQuantity();
+
+        renderOrderSummary();
         renderPaymentSummary();
       })
     });
@@ -176,8 +177,10 @@ export function renderOrderSummary () {
         matchingItem.quantity = Number(quantityInput.value);
         quantityLabel.innerHTML = quantityInput.value;
         saveToStorage();
-        updateCartQuantity();
-        
+
+        renderOrderSummary();
+        renderPaymentSummary();
+
         updateButton.classList.remove('update-quantity-link-invisible');
         itemContainer.classList.remove('is-editing-quantity');
         quantityInput.classList.remove('quantity-input-visible');
