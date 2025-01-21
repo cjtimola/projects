@@ -8,6 +8,8 @@ function testFormatCurreny (cents, value) {
   }  
 }
 
+console.log('test suite: formatCurreny:');
+
 console.log('Converts cents into dollars');
 testFormatCurreny(2095, '20.95');
 
