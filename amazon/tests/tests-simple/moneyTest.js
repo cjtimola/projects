@@ -1,4 +1,4 @@
-import {formatCurrency} from '../scripts/utils/money.js';
+import {formatCurrency} from '../../scripts/utils/money.js';
 
 function testFormatCurreny (cents, value) {
   if (formatCurrency(cents) === value) {
