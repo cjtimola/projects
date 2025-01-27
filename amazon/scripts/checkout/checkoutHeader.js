@@ -1,9 +1,9 @@
-import {cart} from '../../data/cart.js';
+import {cart} from '../../data/cart-class.js';
 
 export default function renderCheckoutHeader () {
   let cartQuantity = 0;
 
-  cart.forEach((item) => {
+  cart.cartItems.forEach((item) => {
     cartQuantity += item.quantity;
   });
 
