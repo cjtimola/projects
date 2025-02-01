@@ -89,7 +89,7 @@ export function loadProducts (fun) {
       }
     });
 
-    console.log('Products Loaded');
+    console.log('load products');
 
     fun();
   });
