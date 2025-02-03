@@ -42,7 +42,8 @@ function renderOrdersSummary () {
           <div class="product-quantity">
             Quantity: ${product.quantity}
           </div>
-          <button class="buy-again-button button-primary">
+          <button class="buy-again-button button-primary js-buy-again-button"
+            data-product-id="${product.productId}" data-quantity="${product.quantity}">
             <img class="buy-again-icon" src="images/icons/buy-again.png">
             <span class="buy-again-message">Buy it again</span>
           </button>
@@ -89,4 +90,14 @@ function renderOrdersSummary () {
 
   document.querySelector('.js-orders-grid')
     .innerHTML = ordersSummaryHTML;
+
+  document.querySelectorAll('.js-buy-again-button')
+    .forEach((button) => {
+      button.addEventListener('click', () => {
+        const {productId, quantity} = button.dataset;
+
+        cart.addToCart(productId, quantity);
+        renderOrdersSummary();
+      });
+    });
 }
