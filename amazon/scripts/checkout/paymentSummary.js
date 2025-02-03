@@ -96,6 +96,7 @@ export function renderPaymentSummary () {
         console.log('Unexpected error. Please try again later.')
       }
 
+      localStorage.removeItem('cart-class');
       window.location.href = 'orders.html';
     });
 
