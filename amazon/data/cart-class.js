@@ -67,6 +67,16 @@ class Cart {
       .innerHTML = cartQuantity;
   }
 
+  countCartQuantity () {
+    let cartQuantity = 0;
+  
+    this.cartItems.forEach((item) => {
+      cartQuantity += item.quantity;
+    });
+
+    return cartQuantity;
+  }
+
   updateDeliveryOption (productId, deliveryOptionId) {
     let isProductIdExists = false;
     let isDeliveryOptionIdExists = false;
@@ -97,6 +107,7 @@ class Cart {
       this.saveToStorage();
     }
   }
+
 }
 
 export const cart = new Cart('cart-class');
