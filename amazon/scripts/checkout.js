@@ -8,8 +8,10 @@ import {loadCart, loadCartFetch} from '../data/cart.js';
 async function loadPage () {
   try {
     // throw 'Error 1';
-    await loadProductsFetch();
-    await loadCartFetch();
+    await Promise.all([
+      loadProductsFetch(),
+      loadCartFetch()
+    ]);
     /*
     const value = await new Promise((resolve, reject) => {
       // throw 'Error 2';
