@@ -227,3 +227,8 @@
   margin-top: 11px;
   margin-bottom: 15px;
 }
+
+.payment-buttons-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

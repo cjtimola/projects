@@ -76,6 +76,11 @@ export function renderPaymentSummary () {
   document.querySelector('.js-payment-summary')
     .innerHTML = paymentSummaryHTML;
 
+  if (!cart.cartItems.length) {
+    document.querySelector('.js-place-order')
+      .classList.add('payment-buttons-disabled');
+  }
+
   document.querySelector('.js-place-order')
     .addEventListener('click', async () => {
       try {
