@@ -5,9 +5,31 @@ import formatCurrency from './utils/money.js';
 loadProducts(renderProductsGrid);
 
 function renderProductsGrid () {
+
+  let searchProducts = [];
+
+  const url = new URL(window.location.href);
+  document.querySelector('.js-search-bar').value = url.searchParams.get('search');
+
+  let searchValue = document.querySelector('.js-search-bar').value;
+      
+  searchProducts = products.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase()));
+
+  document.querySelector('.js-search-button')
+    .addEventListener('click', () => {
+      searchValue = document.querySelector('.js-search-bar').value;
+
+      if (searchValue === '') {
+        window.location.href = 'amazon.html';
+      } else {
+        window.location.href = `amazon.html?search=${searchValue}`;
+      }
+
+    })
+
   let productsHTML = '';
 
-  products.forEach((product) => {
+  searchProducts.forEach((product) => {
     productsHTML += `
       <div class="product-container">
             <div class="product-image-container">
@@ -98,4 +120,5 @@ function renderProductsGrid () {
         cart.updateCartQuantity();
       });
     });
+    
 }
