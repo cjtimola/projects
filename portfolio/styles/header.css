@@ -1,0 +1,43 @@
+.header-container {
+  height: 100px;
+  background-color: rgb(249, 245, 242);
+  padding-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  position: fixed;
+  top: 0;
+  right: 400px;
+  left: 400px;
+
+  z-index: 2000;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.header-container nav ul {
+  list-style: none;
+
+  display: flex;
+  column-gap: 30px;
+}
+
+.header-nav-links {
+  transition: text-decoration .15s,
+    opacity .15s;
+}
+
+.header-nav-links:hover {
+  text-decoration: underline;
+  opacity: .9;
+}
+
+.header-nav-links:active {
+  text-decoration: underline;
+  opacity: .8;
+}

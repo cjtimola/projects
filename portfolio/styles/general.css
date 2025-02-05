@@ -11,9 +11,10 @@ a {
 
 body {
   font-family: Roboto, Arial;
-  padding-inline: 100px;
-  padding-top: 200px;
-  padding-bottom: 50px;
   height: 2000px;
   background-color: rgb(249, 245, 242);
+
+  padding-inline: 400px;
+  padding-top: 200px;
+  padding-bottom: 50px;
 }
