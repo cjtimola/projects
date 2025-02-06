@@ -6,16 +6,12 @@
 @import url('about.css');
 
 .what-i-do-section {
-  /* border: 1px solid black; */
-
-  margin-top: 140px;
-
+  margin-top: 120px;
   scroll-margin-top: 120px;
 }
 
 .what-i-do-header {
   text-align: center;
-  margin-bottom: 80px;
 }
 
 .what-i-do-header .intro {
@@ -24,59 +20,28 @@
 
 .what-i-do-header .title {
   font-size: 35px;
-  font-weight: 500;
+  font-weight: 900;
+
+  margin-bottom: 30px;
 }
 
-.what-i-do-description-container {
-  /* border: 2px solid black; */
-  
-  border-radius: 15px;
-  
-  flex: 1;
+.what-i-do-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  margin-bottom: 30px;
 }
 
-.web-dev-icon {
-  width: 60px;
+.web-dev-box-container,
+.education-box-container,
+.languages-and-tools-box-container {
+  border: 1px solid black;
+  height: 300px;
 }
 
-.what-i-do-description-container .title-container {
-  display: flex;
-  align-items: flex-end;
-
-  column-gap: 10px;
-  margin-bottom: 20px;
-}
-
-.what-i-do-description-container .title-container p {
-  font-size: 40px;
-  font-weight: 700;
-}
-
-.what-i-do-description-container .description {
-  text-align: justify;
-  line-height: 1.6;
-}
-
-@media only screen and (max-width: 600px) {
-  .what-i-do-description-container {
-    padding-inline: 10px;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .what-i-do-description-container {
-    padding-inline: 30px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .what-i-do-description-container {
-    padding-inline: 100px;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .what-i-do-description-container {
-    padding-inline: 150px;
+@media only screen and (max-width: 768px) {
+  .what-i-do-content {
+    grid-template-columns: 1fr;
   }
 }
