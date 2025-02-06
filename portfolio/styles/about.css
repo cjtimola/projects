@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
 
+  gap: 30px;
+
   scroll-margin-top: 120px;
 }
 
@@ -74,6 +76,10 @@
 }
 
 @media only screen and (min-width: 1200px) {
+  .about-section .right-column {
+    padding-right: 50px;
+  }
+
   .about-description,
   .about-title {
     width: 600px;
