@@ -27,7 +27,12 @@
 
 .header .right-column ul {
   display: flex;
+  align-items: center;
   column-gap: 30px;
+}
+
+.burger-icon {
+  display: none;
 }
 
 .brand-name {
@@ -35,7 +40,8 @@
   font-size: 30px;
 }
 
-.header-nav-links {
+.header-nav-links,
+.right-nav-links {
   font-size: 17px;
 }
 
@@ -54,10 +60,48 @@
   opacity: .8;
 }
 
+.burger-icon {
+  width: 45px;
+}
+
+.right-nav-container {
+  display: none;
+
+  width: 50%;
+
+  background-color: rgb(249, 245, 242);
+
+  position: fixed;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+
+  z-index: 3000;
+
+  transition: display 500s;
+}
+
+.right-nav-container-visible {
+  display: block;
+}
+
+.right-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  row-gap: 100px;
+
+  padding-top: 50px;
+}
 
 @media only screen and (max-width: 600px) {
-  .header .right-column {
+  .header .header-nav-links {
     display: none;
+  }
+
+  .burger-icon {
+    display: block;
   }
 }
 
