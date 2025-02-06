@@ -1,4 +1,6 @@
 .header-container {
+  background-color: rgb(249, 245, 242); 
+
   position: fixed;
   top: 0;
   right: 0;
@@ -53,12 +55,10 @@
 }
 
 
-@media (width >= 640px) {
-
-}
-
-@media (width >= 768px) {
-
+@media only screen and (max-width: 600px) {
+  .header .right-column {
+    display: none;
+  }
 }
 
 @media (width >= 1024px) {
