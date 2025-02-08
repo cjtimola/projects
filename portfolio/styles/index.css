@@ -5,3 +5,7 @@
 @import url('header.css');
 @import url('about.css');
 @import url('what-i-do.css');
+
+.my-work-section {
+  scroll-margin-top: 120px;
+}

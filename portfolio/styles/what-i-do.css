@@ -33,11 +33,6 @@
   border: 1px solid black;
 }
 
-.languages-and-tools-box-container {
-  border: 1px solid black;
-  height: 300px;
-}
-
 .web-dev-box-container,
 .education-box-container {
   padding: 25px;
@@ -80,6 +75,53 @@
 
 .see-my-work-link:active {
   opacity: .8;
+}
+
+.languages-and-tools-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 25px;
+
+  border: 1px solid black;
+  border-radius: 10px;
+
+  box-shadow: 3px 3px 1px black;
+}
+
+.languages-and-tools-box-container .first-row {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  margin-bottom: 25px;
+}
+
+.languages-and-tools-icon {
+  width: 50px;
+}
+
+.widf-content-title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.widf-content-title span {
+  font-size: 35px;
+}
+
+.languages-and-tools-box-container .second-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  padding: 20px;
+}
+
+.widf-content-icon {
+  width: 40px;
 }
 
 @media only screen and (max-width: 768px) {
