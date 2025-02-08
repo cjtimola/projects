@@ -4,44 +4,4 @@
 @import url('container.css');
 @import url('header.css');
 @import url('about.css');
-
-.what-i-do-section {
-  margin-top: 120px;
-  scroll-margin-top: 120px;
-}
-
-.what-i-do-header {
-  text-align: center;
-}
-
-.what-i-do-header .intro {
-  font-size: 14px;
-}
-
-.what-i-do-header .title {
-  font-size: 35px;
-  font-weight: 900;
-
-  margin-bottom: 30px;
-}
-
-.what-i-do-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-
-  margin-bottom: 30px;
-}
-
-.web-dev-box-container,
-.education-box-container,
-.languages-and-tools-box-container {
-  border: 1px solid black;
-  height: 300px;
-}
-
-@media only screen and (max-width: 768px) {
-  .what-i-do-content {
-    grid-template-columns: 1fr;
-  }
-}
+@import url('what-i-do.css');

@@ -1,0 +1,89 @@
+.what-i-do-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-margin-top: 120px;
+}
+
+.what-i-do-header {
+  text-align: center;
+}
+
+.what-i-do-header .intro {
+  font-size: 14px;
+}
+
+.what-i-do-header .title {
+  font-size: 35px;
+  font-weight: 900;
+
+  margin-bottom: 30px;
+}
+
+.what-i-do-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+.web-dev-box-container,
+.education-box-container {
+  border: 1px solid black;
+}
+
+.languages-and-tools-box-container {
+  border: 1px solid black;
+  height: 300px;
+}
+
+.web-dev-box-container,
+.education-box-container {
+  padding: 25px;
+  border-radius: 10px;
+
+  box-shadow: 3px 3px 1px black;
+}
+
+.wid-content-icon {
+  width: 65px;
+  
+  margin-bottom: 20px;
+}
+
+.wid-content-title {
+  font-size: 20px;
+  font-weight: 700;
+
+  margin-bottom: 20px;
+}
+
+.wid-content-description {
+  margin-bottom: 20px;
+}
+
+.see-my-work-link {
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: opacity .15s;
+}
+
+.see-my-work-link span {
+  font-size: 20px;
+}
+
+.see-my-work-link:hover {
+  opacity: .9;
+}
+
+.see-my-work-link:active {
+  opacity: .8;
+}
+
+@media only screen and (max-width: 768px) {
+  .what-i-do-content {
+    grid-template-columns: 1fr;
+  }
+}

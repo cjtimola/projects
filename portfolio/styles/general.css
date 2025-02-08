@@ -20,6 +20,10 @@ body {
   justify-content: center;
 }
 
+main section {
+  min-height: 100vh;
+}
+
 a {
   color: black;
   
